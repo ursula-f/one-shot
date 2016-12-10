@@ -41,7 +41,7 @@
 <feature name="http://api.phonegap.com/1.0/geolocation"/>
 <feature name="http://api.phonegap.com/1.0/network"/>
 
-<gap:plugin name="cordova-plugin-camera" spec="~2.3.0" />
+<gap:plugin name="cordova-plugin-preview-camera"/>
 <gap:plugin name="cordova-plugin-geolocation"  />
 <gap:plugin name="cordova-plugin-dialogs"  />
 <gap:plugin name="cordova-plugin-device"  />
