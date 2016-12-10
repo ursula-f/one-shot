@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <title>one shot</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>One Shot</title>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1"/>
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    document.addEventListener("deviceready",onDeviceReady,false);
+      function onDeviceReady() {
+          alert("ready");
+        }
+    function capturePhoto()
+    {
+      navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+      destinationType: Camera.DestinationType.FILE_URI });
+    }
+
+    function onSuccess(imageURI) {
+      var image = document.getElementById('myImage');
+      image.src = imageURI;
+    }
+
+    function onFail(message) {
+      alert('Failed because: ' + message);
+    }
+
+</script>
   </head>
   <body>
-    <main>
-      <canvas id="canvas" width="300" height="300"></canvas>
-    </main>
-    <script src="bundle.js"></script>
-    <!-- <script src="cordova-plugin-camera.js"></script> -->
+    <button onclick="capturePhoto()">CLICK ME</button> <br>
   </body>
 </html>
